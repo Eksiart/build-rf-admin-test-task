@@ -10,8 +10,8 @@ export const ApproveApplicationButton = observer(() => {
   const location = useLocation();
   const navigate = useNavigate();
   const [messageApi, contextHolder] = message.useMessage();
-  const { match, matches, unregistredProducts } = applicationEditStore;
-  const isCantApprove = !!match.source || unregistredProducts.length > 0;
+  const { match, matches, unregisteredProducts } = applicationEditStore;
+  const isCantApprove = !!match.source || unregisteredProducts.length > 0;
 
   const onClick = async () => {
     messageApi.open({
@@ -34,7 +34,6 @@ export const ApproveApplicationButton = observer(() => {
         navigate(getRouteCatalogManagementApplications());
       }
     } catch (e) {
-      console.log(e);
       messageApi.open({
         key: APPROVE_APPLICATION_BUTTON_ID,
         type: 'error',

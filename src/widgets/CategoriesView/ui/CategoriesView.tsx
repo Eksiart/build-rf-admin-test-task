@@ -69,6 +69,7 @@ export const CategoriesView = observer(() => {
       });
     }
 
+    // TODO: delete on normal backend
     console.log(categoryId, path.at(-1));
   };
 

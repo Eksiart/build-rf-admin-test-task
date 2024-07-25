@@ -17,10 +17,9 @@ export interface Product {
   volume: number;
 }
 
-export type ProductFormType = Omit<Product, 'id' | 'category' | 'mark' | 'measurementUnit'> & {
-  id?: Product['id'];
-  mark: Mark['id'];
+export type ProductFormType = Partial<Omit<Product, 'category' | 'mark' | 'measurementUnit'>> & {
   category: Category['id'];
+  mark: Mark['id'];
   measurementUnit: MeasurementUnit['id'];
 };
 

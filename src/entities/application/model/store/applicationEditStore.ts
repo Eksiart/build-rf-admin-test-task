@@ -34,7 +34,7 @@ class ApplicationEditStore {
     this.matches = this.matches.filter((uP) => uP.id !== id);
   };
 
-  get unregistredProducts() {
+  get unregisteredProducts() {
     if (this.application?.state !== 'fulfilled') return [];
     return this.application.value.products.filter(
       (p) => !(p.id === this.match.id || this.matches.some((m) => m.source.id === p.id)),
